@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CharacterCollectionViewCell" id="HDv-K3-T7d" customClass="CharactersListCollectionViewCell" customModule="MarvelHeroes" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="211" height="142"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="3QY-pG-GCT">
+                <rect key="frame" x="0.0" y="0.0" width="211" height="142"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ukK-ee-bOH">
+                        <rect key="frame" x="0.0" y="0.0" width="211" height="142"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d8o-6x-x9H">
+                        <rect key="frame" x="84.5" y="60.5" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="d8o-6x-x9H" firstAttribute="centerY" secondItem="3QY-pG-GCT" secondAttribute="centerY" id="1Gy-d4-LdW"/>
+                    <constraint firstAttribute="bottom" secondItem="ukK-ee-bOH" secondAttribute="bottom" id="9dI-PA-dze"/>
+                    <constraint firstAttribute="trailing" secondItem="ukK-ee-bOH" secondAttribute="trailing" id="CtN-Fz-mx8"/>
+                    <constraint firstItem="ukK-ee-bOH" firstAttribute="leading" secondItem="3QY-pG-GCT" secondAttribute="leading" id="esU-BX-GT9"/>
+                    <constraint firstItem="ukK-ee-bOH" firstAttribute="top" secondItem="3QY-pG-GCT" secondAttribute="top" id="pIu-kh-bIy"/>
+                    <constraint firstItem="d8o-6x-x9H" firstAttribute="centerX" secondItem="3QY-pG-GCT" secondAttribute="centerX" id="sSB-p9-A00"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <size key="customSize" width="211" height="142"/>
+            <connections>
+                <outlet property="imageView" destination="ukK-ee-bOH" id="9zW-Yr-PBL"/>
+                <outlet property="nameLabel" destination="d8o-6x-x9H" id="Ukg-Cm-9pG"/>
+            </connections>
+            <point key="canvasLocation" x="112.31884057971016" y="-135.26785714285714"/>
+        </collectionViewCell>
+    </objects>
+</document>
