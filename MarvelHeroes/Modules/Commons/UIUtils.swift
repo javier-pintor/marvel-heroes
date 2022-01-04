@@ -30,4 +30,21 @@ struct UIUtils {
             return isLandscape() ? UIConfig.charactersListMobileLandscapeColumns : UIConfig.charactersListMobilePortraitColumns
         }
     }
+    
+    func getWordingString(value: String) -> String {
+        if let path = Bundle.main.path(forResource: "wording", ofType: "json") {
+            do {
+                  let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+                  let jsonResult = try JSONSerialization.jsonObject(with: data, options: .mutableLeaves)
+                  if let jsonResult = jsonResult as? Dictionary<String, AnyObject>,
+                     let response = jsonResult[value] as? String {
+                    return response
+                  }
+              } catch {
+                  return ""
+              }
+        }
+        
+        return ""
+    }
 }

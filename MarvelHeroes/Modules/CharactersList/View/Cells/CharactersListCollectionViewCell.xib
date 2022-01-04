@@ -18,22 +18,34 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ukK-ee-bOH">
-                        <rect key="frame" x="0.0" y="0.0" width="211" height="142"/>
+                        <rect key="frame" x="0.0" y="0.0" width="211" height="110"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d8o-6x-x9H">
-                        <rect key="frame" x="84.5" y="60.5" width="42" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jsj-Mx-I46">
+                        <rect key="frame" x="0.0" y="110" width="211" height="32"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d8o-6x-x9H">
+                                <rect key="frame" x="84.5" y="5.5" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="d8o-6x-x9H" firstAttribute="centerY" secondItem="Jsj-Mx-I46" secondAttribute="centerY" id="CGU-n5-jN4"/>
+                            <constraint firstItem="d8o-6x-x9H" firstAttribute="centerX" secondItem="Jsj-Mx-I46" secondAttribute="centerX" id="DhX-tQ-Wnd"/>
+                            <constraint firstAttribute="height" constant="32" id="wcq-7s-FgB"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="d8o-6x-x9H" firstAttribute="centerY" secondItem="3QY-pG-GCT" secondAttribute="centerY" id="1Gy-d4-LdW"/>
-                    <constraint firstAttribute="bottom" secondItem="ukK-ee-bOH" secondAttribute="bottom" id="9dI-PA-dze"/>
                     <constraint firstAttribute="trailing" secondItem="ukK-ee-bOH" secondAttribute="trailing" id="CtN-Fz-mx8"/>
+                    <constraint firstItem="ukK-ee-bOH" firstAttribute="bottom" secondItem="Jsj-Mx-I46" secondAttribute="top" id="QVb-5G-RWd"/>
+                    <constraint firstAttribute="trailing" secondItem="Jsj-Mx-I46" secondAttribute="trailing" id="e1k-fo-Txq"/>
+                    <constraint firstItem="Jsj-Mx-I46" firstAttribute="leading" secondItem="3QY-pG-GCT" secondAttribute="leading" id="eDf-Ie-hy5"/>
                     <constraint firstItem="ukK-ee-bOH" firstAttribute="leading" secondItem="3QY-pG-GCT" secondAttribute="leading" id="esU-BX-GT9"/>
                     <constraint firstItem="ukK-ee-bOH" firstAttribute="top" secondItem="3QY-pG-GCT" secondAttribute="top" id="pIu-kh-bIy"/>
-                    <constraint firstItem="d8o-6x-x9H" firstAttribute="centerX" secondItem="3QY-pG-GCT" secondAttribute="centerX" id="sSB-p9-A00"/>
+                    <constraint firstAttribute="bottom" secondItem="Jsj-Mx-I46" secondAttribute="bottom" id="wce-oI-RaS"/>
                 </constraints>
             </collectionViewCellContentView>
             <size key="customSize" width="211" height="142"/>

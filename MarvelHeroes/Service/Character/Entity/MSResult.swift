@@ -5,8 +5,6 @@
 //  Created by Javier Pintor on 3/1/22.
 //
 
-import Foundation
-
 // MARK: - MSCharactersResult
 struct MSResult<T: Codable>: Codable {
     let code: Int?

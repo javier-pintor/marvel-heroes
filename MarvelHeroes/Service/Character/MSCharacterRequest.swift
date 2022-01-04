@@ -11,19 +11,22 @@ import SwiftyJSON
 class MSCharacterRequest {
     
     var baseUrl: String
-    let charactersList: String = "characters"
-    let character: String = "character"
+    let characters: String = "characters"
     
     init (baseUrl: String) {
         self.baseUrl = baseUrl
     }
     
-    func getCharactersList(onResult: @escaping (MSResult<MSCharacter>) -> Void) {
+    func getCharacters<T: Codable>(id: Int? = nil, onResult: @escaping (MSResult<T>) -> Void) {
         
-        var getCharactersListResponse = MSResult<MSCharacter>()
-        let url = "\(baseUrl)/\(charactersList)"
+        var getCharactersResponse = MSResult<T>()
+        var url = "\(baseUrl)/\(characters)"
+        if let characterId = id{
+            url += "/\(characterId)"
+        }
+        
         guard let finalUrl = MSUtils.buildServiceRequestUrl(baseUrl: url) else{
-            onResult(getCharactersListResponse)
+            onResult(getCharactersResponse)
             return
         }
         
@@ -32,19 +35,18 @@ class MSCharacterRequest {
                 do{
                     let json = try JSON.init(data: dataResponse)
                     let decoder = JSONDecoder()
-                    getCharactersListResponse = try decoder.decode(type(of: getCharactersListResponse), from: json.rawData())
-                    onResult(getCharactersListResponse)
+                    getCharactersResponse = try decoder.decode(type(of: getCharactersResponse), from: json.rawData())
+                    onResult(getCharactersResponse)
                     return
                 }catch{
-                    print("ServiceCharacterRequest getCharactersList parse error: \(error)")
+                    print("ServiceCharacterRequest getCharacters parse error: \(error)")
                 }
             }
             
             
-            onResult(getCharactersListResponse)
+            onResult(getCharactersResponse)
         }
     }
-    
     
 }
 

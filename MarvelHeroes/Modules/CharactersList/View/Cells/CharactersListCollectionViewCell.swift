@@ -14,7 +14,7 @@ class CharactersListCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
     
     
-    func configureCell(character: MSCharacter){
+    func configureCell(character: MSCharacterLite){
         nameLabel.text = character.name
         
         if let path = character.thumbnail?.path,
