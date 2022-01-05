@@ -5,6 +5,13 @@
   </p>
 </p>
 
+<p align="row">
+<img src= "https://github.com/javier-pintor/marvel-heroes/blob/main/Resources/Screenshots/Mobile/character_list_mobile.png" width="400" >
+<img src= "https://github.com/javier-pintor/marvel-heroes/blob/main/Resources/Screenshots/Mobile/character_detail_mobile.png" width="400" >
+<img src= "https://github.com/javier-pintor/marvel-heroes/blob/main/Resources/Screenshots/iPad/character_list_ipad.png" width="400" >
+<img src= "https://github.com/javier-pintor/marvel-heroes/blob/main/Resources/Screenshots/iPad/character_detail_ipad.png" width="400" >
+</p>
+
 ## Requirements
 
 - iOS 13.0+
@@ -13,6 +20,9 @@
 ## Installation
 
 #### CocoaPods
+
+- [x] Add SDWebImage pod to load images asynchronusly and save them on cache.
+- [x] Add SwiftyJson to parse json response to swift models quickly.
 
 ```ruby
 pod install
@@ -31,6 +41,6 @@ pod install
 
 ## Next steps
 
-- [x] Add pagination to CharacterListView would be necessary to access to entire information. Now the service return only the twenty first results.
-- [x] Add unit test to rest of the code (Modules folder).
-- [x] Add more SOLID architecture to isolate parts of code, like the Entities of the Service, which are used even by the views now.
+- [ ] Add pagination to CharacterListView would be necessary to access to entire information. Now the service return only the twenty first results.
+- [ ] Add unit test to rest of the code (Modules folder).
+- [ ] Add more SOLID architecture to isolate parts of code, like the Entities of the Service, which are used even by the views now.
