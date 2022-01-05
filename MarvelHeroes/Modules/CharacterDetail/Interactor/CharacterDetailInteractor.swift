@@ -6,7 +6,10 @@
 //
 
 class CharacterDetailInteractor: InteractorCharacterDetailProtocol {
-    var presenter: PresenterCharacterDetailProtocol?
+    
     var character: MSCharacter?
     
+    init(character: MSCharacter?){
+        self.character = character
+    }
 }

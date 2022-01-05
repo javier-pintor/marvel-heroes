@@ -19,6 +19,7 @@ class CharactersListCollectionViewCell: UICollectionViewCell {
         
         if let path = character.thumbnail?.path,
            let ext = character.thumbnail?.thumbnailExtension{
+            //this can be processed in service layer
             imageView.sd_setImage(with: URL(string: "\(path).\(ext)"))
         }
     }

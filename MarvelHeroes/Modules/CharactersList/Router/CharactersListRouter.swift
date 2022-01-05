@@ -12,13 +12,11 @@ import UIKit
 
 class CharactersListRouter: RouterCharactersProtocol {
 
-    
     static func initModule(viewController: CharactersListViewController){
-        let presenter = CharacterListPresenter()
+        let interactor = CharacterListInteractor()
+        let router = CharactersListRouter()
+        let presenter = CharacterListPresenter(interactor: interactor, view: viewController, router: router)
         viewController.presenter = presenter
-        viewController.presenter?.router = CharactersListRouter()
-        viewController.presenter?.view = viewController
-        viewController.presenter?.interactor = CharacterListInteractor()
         viewController.presenter?.interactor?.presenter = presenter
     }
     

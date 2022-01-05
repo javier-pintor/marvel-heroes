@@ -13,7 +13,6 @@ protocol PresenterCharactersProtocol {
     var view: ViewCharactersProtocol? { get set }
     var interactor: InteractorCharactersProtocol? { get set }
     var router: RouterCharactersProtocol? { get set }
-    var characterList: [MSCharacterLite]? { get set }
     func viewDidLoad()
     func didSelectRowAt(id: Int)
     

@@ -13,15 +13,13 @@ class CharacterDetailRouter: RouterCharacterDetailProtocol {
     static func initModule(character: MSCharacter) -> UIViewController? {
         
         if let viewController = UIStoryboard(name: "CharacterDetailsViewController", bundle: Bundle.main).instantiateViewController(withIdentifier: "\(CharacterDetailsViewController.self)") as? CharacterDetailsViewController{
-            let presenter = CharacterDetailPresenter()
+            
+            let interactor = CharacterDetailInteractor(character: character)
+            let router = CharacterDetailRouter()
+            let presenter = CharacterDetailPresenter(interactor: interactor, view: viewController, router: router)
             
             viewController.msCharacter = character
-            viewController.presenter = CharacterDetailPresenter()
-            viewController.presenter?.router = CharacterDetailRouter()
-            viewController.presenter?.view = viewController
-            viewController.presenter?.interactor = CharacterDetailInteractor()
-            viewController.presenter?.interactor?.character = character
-            viewController.presenter?.interactor?.presenter = presenter
+            viewController.presenter = presenter
             
             return viewController
         }

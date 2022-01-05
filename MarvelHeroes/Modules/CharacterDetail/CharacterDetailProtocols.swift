@@ -14,7 +14,6 @@ protocol PresenterCharacterDetailProtocol {
 }
 
 protocol InteractorCharacterDetailProtocol {
-    var presenter: PresenterCharacterDetailProtocol? { get set }
     var character: MSCharacter? { get set }
 }
 

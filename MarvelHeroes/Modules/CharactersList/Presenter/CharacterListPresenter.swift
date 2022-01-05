@@ -11,7 +11,11 @@ class CharacterListPresenter: PresenterCharactersProtocol {
     var interactor: InteractorCharactersProtocol?
     var router: RouterCharactersProtocol?
     
-    var characterList: [MSCharacterLite]?
+    init(interactor: InteractorCharactersProtocol?, view: ViewCharactersProtocol, router: RouterCharactersProtocol) {
+        self.interactor = interactor
+        self.view = view
+        self.router = router
+    }
     
     func viewDidLoad() {
         interactor?.loadCharacters()
@@ -22,7 +26,6 @@ class CharacterListPresenter: PresenterCharactersProtocol {
     }
     
     func fetchCharactersSuccess(characters: [MSCharacterLite]) {
-        characterList = characters
         view?.onFetchCharactersSuccess(characters: characters)
     }
     
